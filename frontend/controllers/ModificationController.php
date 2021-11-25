@@ -2,16 +2,16 @@
 
 namespace app\controllers;
 
-use app\models\Brand;
-use app\models\BrandSearch;
+use app\models\Modification;
+use app\models\ModificationSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * BrandController implements the CRUD actions for Brand model.
+ * ModificationController implements the CRUD actions for Modification model.
  */
-class BrandController extends Controller
+class ModificationController extends Controller
 {
     /**
      * @inheritDoc
@@ -32,12 +32,12 @@ class BrandController extends Controller
     }
 
     /**
-     * Lists all Brand models.
+     * Lists all Modification models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new BrandSearch();
+        $searchModel = new ModificationSearch();
         $dataProvider = $searchModel->search($this->request->queryParams);
 
         return $this->render('index', [
@@ -47,7 +47,7 @@ class BrandController extends Controller
     }
 
     /**
-     * Displays a single Brand model.
+     * Displays a single Modification model.
      * @param int $id ID
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
@@ -60,13 +60,13 @@ class BrandController extends Controller
     }
 
     /**
-     * Creates a new Brand model.
+     * Creates a new Modification model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new Brand();
+        $model = new Modification();
 
         if ($this->request->isPost) {
             if ($model->load($this->request->post()) && $model->save()) {
@@ -82,7 +82,7 @@ class BrandController extends Controller
     }
 
     /**
-     * Updates an existing Brand model.
+     * Updates an existing Modification model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param int $id ID
      * @return mixed
@@ -102,7 +102,7 @@ class BrandController extends Controller
     }
 
     /**
-     * Deletes an existing Brand model.
+     * Deletes an existing Modification model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param int $id ID
      * @return mixed
@@ -116,15 +116,15 @@ class BrandController extends Controller
     }
 
     /**
-     * Finds the Brand model based on its primary key value.
+     * Finds the Modification model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param int $id ID
-     * @return Brand the loaded model
+     * @return Modification the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Brand::findOne($id)) !== null) {
+        if (($model = Modification::findOne($id)) !== null) {
             return $model;
         }
 
