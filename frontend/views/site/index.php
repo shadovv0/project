@@ -2,20 +2,22 @@
 
 /* @var $this yii\web\View */
 
+use yii\helpers\Url;
+
 $this->title = 'My Yii Application';
 ?>
 <div class="site-index">
-
     <div class="jumbotron text-center bg-transparent">
         <h1 class="display-4">Congratulations!</h1>
-
         <p class="lead">You have successfully created your Yii-powered application.</p>
-
         <p><a class="btn btn-lg btn-success" href="http://www.yiiframework.com">Get started with Yii</a></p>
     </div>
-
+    <a href="<?= Url::to(['country/index']) ?>">Country</a>
+    <a href="<?= Url::to(['brand/index']) ?>">Brand</a>
+    <a href="<?= Url::to(['model/index']) ?>">Model</a>
+    <a href="<?= Url::to(['generation/index']) ?>">Generation</a>
+    <a href="<?= Url::to(['modification/index']) ?>">Modification</a>
     <div class="body-content">
-
         <div class="row">
             <div class="col-lg-4">
                 <h2>Heading</h2>
@@ -36,6 +38,7 @@ $this->title = 'My Yii Application';
                     fugiat nulla pariatur.</p>
 
                 <p><a class="btn btn-outline-secondary" href="http://www.yiiframework.com/forum/">Yii Forum &raquo;</a></p>
+               
             </div>
             <div class="col-lg-4">
                 <h2>Heading</h2>

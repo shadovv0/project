@@ -1,6 +1,6 @@
 <?php
 
-namespace app\controllers;
+namespace frontend\controllers;
 
 use app\models\Brand;
 use app\models\BrandSearch;
@@ -11,7 +11,7 @@ use yii\filters\VerbFilter;
 /**
  * BrandController implements the CRUD actions for Brand model.
  */
-class BrandController extends Controller
+class GenerationController extends Controller
 {
     /**
      * @inheritDoc

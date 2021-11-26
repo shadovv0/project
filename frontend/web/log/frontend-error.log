@@ -1,0 +1,13 @@
+2021/11/25 16:45:22 [error] 872#872: *48 FastCGI sent in stderr: "PHP message: An Error occurred while handling another error:
+ParseError: syntax error, unexpected token ";", expecting "]" in /var/www/test.devs/yii2-app-advanced/frontend/views/layouts/main.php:42
+Stack trace:
+#0 /var/www/test.devs/yii2-app-advanced/vendor/yiisoft/yii2/base/View.php(257): yii\base\View->renderPhpFile()
+#1 /var/www/test.devs/yii2-app-advanced/vendor/yiisoft/yii2/base/Controller.php(425): yii\base\View->renderFile()
+#2 /var/www/test.devs/yii2-app-advanced/vendor/yiisoft/yii2/base/Controller.php(411): yii\base\Controller->renderContent()
+#3 /var/www/test.devs/yii2-app-advanced/vendor/yiisoft/yii2/web/ErrorAction.php(139): yii\base\Controller->render()
+#4 /var/www/test.devs/yii2-app-advanced/vendor/yiisoft/yii2/web/ErrorAction.php(118): yii\web\ErrorAction->renderHtmlResponse()
+#5 [internal function]: yii\web\ErrorAction->run()
+#6 /var/www/test.devs/yii2-app-advanced/vendor/yiisoft/yii2/base/Action.php(94): call_user_func_array()
+#7 /var/www/test.devs/yii2-app-advanced/vendor/yiisoft" while reading upstream, client: 127.0.0.1, server: yii.devs, request: "GET /index.php?r=%22Url%3A%3Ato%28%5Bcountry%2Findex%5D HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php8.0-fpm.sock:", host: "yii.devs", referrer: "http://yii.devs/"
+2021/11/25 19:15:29 [error] 872#872: *260 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Cannot use app\models\Model as Model because the name is already in use in /var/www/test.devs/yii2-app-advanced/frontend/models/ModelSearch.php on line 7" while reading response header from upstream, client: 127.0.0.1, server: yii.devs, request: "GET /index.php?r=model%2Findex HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php8.0-fpm.sock:", host: "yii.devs", referrer: "http://yii.devs/"
+2021/11/25 19:15:41 [error] 872#872: *260 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Cannot use app\models\Model as Model because the name is already in use in /var/www/test.devs/yii2-app-advanced/frontend/models/ModelSearch.php on line 7" while reading response header from upstream, client: 127.0.0.1, server: yii.devs, request: "GET /index.php?r=model%2Findex HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php8.0-fpm.sock:", host: "yii.devs", referrer: "http://yii.devs/"
