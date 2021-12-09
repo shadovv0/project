@@ -2,8 +2,9 @@
 
 namespace app\models;
 
-use yii\base\Model;
+use yii\base\Model as BaseModel;
 use yii\data\ActiveDataProvider;
+use app\models\Model;
 
 /**
  * ModelSearch represents the model behind the search form of `app\models\Model`.
@@ -39,7 +40,7 @@ class ModelSearch extends Model
      */
     public function search($params)
     {
-        $query = Model::find();
+        $query = Model::find()->joinWith(['brand']);
 
         // add conditions that should always apply here
 

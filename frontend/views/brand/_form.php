@@ -2,6 +2,9 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use yii\helpers\ArrayHelper;
+use app\models\Country;
+use app\models\Brand;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Brand */
@@ -12,7 +15,14 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'country_id')->textInput() ?>
+    <?= $form->field($model, 'country_id')->dropDownList(
+            ArrayHelper::map(\app\models\CountrySearch::find()->asArray()->all(), 'id', 'name'),
+        [
+          'prompt'=>'Select Country',
+            '$.post( "index.php?r=brands/lists&id=', '"+$(this.val(), function(data) {
+              $("select#models-contact").html(data);
+              });'
+        ]); ?>
 
     <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
 

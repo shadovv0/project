@@ -40,7 +40,7 @@ class BrandSearch extends Brand
      */
     public function search($params)
     {
-        $query = Brand::find();
+        $query = Brand::find()->joinWith(['country']);
 
         // add conditions that should always apply here
 

@@ -1,4 +1,5 @@
 <?php
+
 namespace app\models;
 use Yii;
 
@@ -38,11 +39,15 @@ class Model extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'brand_id' => 'Country ID',
+            'brand_id' => 'Brand ID',
             'name' => 'Name',
             'code' => 'Code',
             'class' => 'Class',
             'sort' => 'Sort',
         ];
+    }
+    public function getBrand()
+    {
+        return $this->hasOne(Brand::className(), ['id' => 'brand_id']);
     }
 }

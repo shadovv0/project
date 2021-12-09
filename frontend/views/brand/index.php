@@ -9,6 +9,7 @@ use yii\grid\GridView;
 
 $this->title = 'Brands';
 $this->params['breadcrumbs'][] = $this->title;
+
 ?>
 <div class="brand-index">
 
@@ -27,7 +28,10 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
 
             'id',
-            'country_id',
+           [
+            'attribute' => 'country_id',
+            'value' => 'country.name',
+            ],
             'name',
             'code',
 

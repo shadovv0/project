@@ -11,6 +11,7 @@ use Yii;
  * @property string|null $name
  * @property string|null $code
  */
+
 class Brand extends \yii\db\ActiveRecord
 {
     /**
@@ -41,5 +42,9 @@ class Brand extends \yii\db\ActiveRecord
             'name' => 'Name',
             'code' => 'Code',
         ];
+    }
+    public function getCountry()
+    {
+        return $this->hasOne(Country::className(), ['id' => 'country_id']);
     }
 }
