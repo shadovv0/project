@@ -4,12 +4,14 @@ namespace frontend\controllers;
 
 use app\models\Brand;
 use app\models\BrandSearch;
+use app\models\Generation;
+use app\models\GenerationSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * BrandController implements the CRUD actions for Brand model.
+ * GenerationController implements the CRUD actions for Brand model.
  */
 class GenerationController extends Controller
 {
@@ -32,12 +34,12 @@ class GenerationController extends Controller
     }
 
     /**
-     * Lists all Brand models.
+     * Lists all Generation models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new BrandSearch();
+        $searchModel = new GenerationSearch();
         $dataProvider = $searchModel->search($this->request->queryParams);
 
         return $this->render('index', [
@@ -47,7 +49,7 @@ class GenerationController extends Controller
     }
 
     /**
-     * Displays a single Brand model.
+     * Displays a single Generation model.
      * @param int $id ID
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
@@ -60,13 +62,13 @@ class GenerationController extends Controller
     }
 
     /**
-     * Creates a new Brand model.
+     * Creates a new Generation model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new Brand();
+        $model = new Generation();
 
         if ($this->request->isPost) {
             if ($model->load($this->request->post()) && $model->save()) {
@@ -82,7 +84,7 @@ class GenerationController extends Controller
     }
 
     /**
-     * Updates an existing Brand model.
+     * Updates an existing Generation model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param int $id ID
      * @return mixed
@@ -102,7 +104,7 @@ class GenerationController extends Controller
     }
 
     /**
-     * Deletes an existing Brand model.
+     * Deletes an existing Generation model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param int $id ID
      * @return mixed
@@ -116,15 +118,15 @@ class GenerationController extends Controller
     }
 
     /**
-     * Finds the Brand model based on its primary key value.
+     * Finds the Generation model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param int $id ID
-     * @return Brand the loaded model
+     * @return Generation the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Brand::findOne($id)) !== null) {
+        if (($model = Generation::findOne($id)) !== null) {
             return $model;
         }
 

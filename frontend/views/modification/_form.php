@@ -2,6 +2,9 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use yii\helpers\ArrayHelper;
+use app\models\Generation;
+use app\models\Modification;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Modification */
@@ -12,7 +15,15 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'generation_id')->textInput() ?>
+    <?= $form->field($model, 'generation_id')->dropDownList(
+            ArrayHelper::map(\app\models\GenerationSearch::find()->asArray()->all(), 'id', 'name'),
+        [
+            'prompt'=>'Select Generation',
+            '$.post( "index.php?r=brands/lists&id=', '"+$(this.val() function(data) {
+            $("select#models-contact").html(data);
+            });'
+        ]);
+    ?>
 
     <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
 

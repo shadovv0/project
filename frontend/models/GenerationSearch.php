@@ -40,7 +40,7 @@ class GenerationSearch extends Generation
      */
     public function search($params)
     {
-        $query = Generation::find();
+        $query = Generation::find()->joinWith(['model']);
 
         // add conditions that should always apply here
 

@@ -41,7 +41,7 @@ class ModificationSearch extends Modification
      */
     public function search($params)
     {
-        $query = Modification::find();
+        $query = Modification::find()->joinWith(['generation']);
 
         // add conditions that should always apply here
 

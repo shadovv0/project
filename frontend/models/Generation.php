@@ -48,4 +48,8 @@ class Generation extends \yii\db\ActiveRecord
             'dt_end' => 'Dt End',
         ];
     }
+    public function getModel()
+    {
+        return $this->hasOne(Model::className(), ['id' => 'model_id']);
+    }
 }

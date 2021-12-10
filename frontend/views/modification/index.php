@@ -27,7 +27,10 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
 
             'id',
-            'generation_id',
+            [
+             'attribute' => 'generation_id',
+              'value' => 'country.name',
+            ],
             'name',
             'code',
             'engine_type',

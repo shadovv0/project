@@ -11,7 +11,7 @@ use app\models\Model;
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
-    <div class="model-form">
+<div class="model-form">
 
 <?php $form = ActiveForm::begin(); ?>
 

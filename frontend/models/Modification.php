@@ -54,4 +54,8 @@ class Modification extends \yii\db\ActiveRecord
             'price' => 'Price',
         ];
     }
+    public function getGeneration()
+    {
+        return $this->hasOne(Generation::className(), ['id' => 'generation_id']);
+    }
 }

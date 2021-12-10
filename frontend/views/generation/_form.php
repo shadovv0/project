@@ -3,8 +3,10 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use yii\helpers\ArrayHelper;
+use app\models\Brand;
 use app\models\Model;
 use app\models\Generation;
+
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Generation */
@@ -16,16 +18,15 @@ use app\models\Generation;
     <?php $form = ActiveForm::begin(); ?>
 
     <?= $form->field($model, 'model_id')->dropDownList(
-        ArrayHelper::map(\app\models\CountrySearch::find()->asArray()->all(), 'id', 'name'),
+            ArrayHelper::map(\app\models\ModelSearch::find()->asArray()->all(), 'id', 'name'),
         [
-            'prompt'=>'Select Model',
-            '$.post( "index.php?r=brands/lists&id=', '"+$(this.val(), function(data) {
-              $("select#models-contact").html(data);
-              });'
+           'prompt'=>'Select Model',
+            '$.post( "index.php?r=brands\lists&id=', '"+$(this.val(), function(data) {
+            $("select#models-contact").html(data);
+            });'
         ]); ?>
 
     <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
-
 
     <?= $form->field($model, 'code')->textInput(['maxlength' => true]) ?>
 
