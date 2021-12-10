@@ -21,9 +21,6 @@ use app\models\Generation;
             ArrayHelper::map(\app\models\ModelSearch::find()->asArray()->all(), 'id', 'name'),
         [
            'prompt'=>'Select Model',
-            '$.post( "index.php?r=brands\lists&id=', '"+$(this.val(), function(data) {
-            $("select#models-contact").html(data);
-            });'
         ]); ?>
 
     <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>

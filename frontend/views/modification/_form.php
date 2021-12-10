@@ -19,9 +19,6 @@ use app\models\Modification;
             ArrayHelper::map(\app\models\GenerationSearch::find()->asArray()->all(), 'id', 'name'),
         [
             'prompt'=>'Select Generation',
-            '$.post( "index.php?r=brands/lists&id=', '"+$(this.val() function(data) {
-            $("select#models-contact").html(data);
-            });'
         ]);
     ?>
 

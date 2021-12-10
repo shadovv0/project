@@ -28,16 +28,18 @@ AppAsset::register($this);
 <header>
     <?php
     NavBar::begin([
-        'brandLabel' => Yii::$app->name,
+        'brandLabel' => $this->title,
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
             'class' => 'navbar navbar-expand-md navbar-dark bg-dark fixed-top',
         ],
     ]);
     $menuItems = [
-        ['label' => 'Home', 'url' => ['/site/index']],
-        ['label' => 'About', 'url' => ['/site/about']],
-        ['label' => 'Contact', 'url' => ['/site/contact']],
+        ['label' => 'Country', 'url' => ['/country/index']],
+        ['label' => 'Brand', 'url' => ['/brand/index']],
+        ['label' => 'Model', 'url' => ['/model/index']],
+        ['label' => 'Generation', 'url' => ['/generation/index']],
+        ['label' => 'Modification', 'url' => ['/modification/index']],
     ];
     if (Yii::$app->user->isGuest) {
         $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];

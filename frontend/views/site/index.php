@@ -4,7 +4,7 @@
 
 use yii\helpers\Url;
 
-$this->title = 'My Yii Application';
+$this->title = 'shadow';
 ?>
 <div class="site-index">
     <div class="jumbotron text-center bg-transparent">
@@ -12,11 +12,6 @@ $this->title = 'My Yii Application';
         <p class="lead">You have successfully created your Yii-powered application.</p>
         <p><a class="btn btn-lg btn-success" href="http://www.yiiframework.com">Get started with Yii</a></p>
     </div>
-    <a href="<?= Url::to(['country/index']) ?>">Country</a>
-    <a href="<?= Url::to(['brand/index']) ?>">Brand</a>
-    <a href="<?= Url::to(['model/index']) ?>">Model</a>
-    <a href="<?= Url::to(['generation/index']) ?>">Generation</a>
-    <a href="<?= Url::to(['modification/index']) ?>">Modification</a>
     <div class="body-content">
         <div class="row">
             <div class="col-lg-4">
