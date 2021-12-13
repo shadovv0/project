@@ -58,12 +58,12 @@ class BrandSearch extends Brand
 
         // grid filtering conditions
         $query->andFilterWhere([
-            'id' => $this->id,
-            'country_id' => $this->country_id,
+            'brand.id' => $this->id,
+            'brand.country_id' => $this->country_id,
         ]);
 
-        $query->andFilterWhere(['like', 'name', $this->name])
-            ->andFilterWhere(['like', 'code', $this->code]);
+        $query->andFilterWhere(['like', 'brand.name', $this->name])
+            ->andFilterWhere(['like', 'brand.code', $this->code]);
 
         return $dataProvider;
     }

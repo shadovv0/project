@@ -4,6 +4,7 @@ use yii\helpers\Html;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Generation */
+/* @var $dropdownModels array */
 
 $this->title = 'Create Generation';
 $this->params['breadcrumbs'][] = ['label' => 'Generations', 'url' => ['index']];
@@ -15,6 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <?= $this->render('_form', [
         'model' => $model,
+        'dropdownModels' => $dropdownModels,
     ]) ?>
 
 </div>

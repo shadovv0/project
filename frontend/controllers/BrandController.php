@@ -4,6 +4,7 @@ namespace frontend\controllers;
 
 use app\models\Brand;
 use app\models\BrandSearch;
+use app\models\Country;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -40,9 +41,12 @@ class BrandController extends Controller
         $searchModel = new BrandSearch();
         $dataProvider = $searchModel->search($this->request->queryParams);
 
+        $dropdownCountries = Country::getDropdownArray();
+
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
+            'dropdownCountries' => $dropdownCountries,
         ]);
     }
 
@@ -76,8 +80,11 @@ class BrandController extends Controller
             $model->loadDefaultValues();
         }
 
+        $dropdownCountries = Country::getDropdownArray();
+
         return $this->render('create', [
             'model' => $model,
+            'dropdownCountries' => $dropdownCountries,
         ]);
     }
 

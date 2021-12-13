@@ -12,7 +12,7 @@ use Yii;
  * @property string|null $dt_start
  * @property string|null $dt_end
  */
-class Generation extends \yii\db\ActiveRecord
+class Generation extends BaseModel
 {
     /**
      * {@inheritdoc}
@@ -41,7 +41,7 @@ class Generation extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'model_id' => 'Model ID',
+            'model_id' => 'Model',
             'name' => 'Name',
             'code' => 'Code',
             'dt_start' => 'Dt Start',
@@ -52,4 +52,12 @@ class Generation extends \yii\db\ActiveRecord
     {
         return $this->hasOne(Model::className(), ['id' => 'model_id']);
     }
+
+    public static function getDropdownArray($id = 'id', $name = 'name')
+    {
+        $res = parent::getDropdownArray($id, $name);
+
+        return $res;
+    }
+
 }

@@ -9,6 +9,7 @@ use app\models\Model;
 /* @var $this yii\web\View */
 /* @var $model app\models\Model */
 /* @var $form yii\widgets\ActiveForm */
+/* @var $dropdownBrands array */
 ?>
 
 <div class="model-form">
@@ -16,9 +17,10 @@ use app\models\Model;
 <?php $form = ActiveForm::begin(); ?>
 
 <?= $form->field($model, 'brand_id')->dropDownList(
-        ArrayHelper::map(\app\models\BrandSearch::find()->asArray()->all(), 'id', 'name'),
+        Brand::getDropdownArray('id', 'name'),
     [
             'prompt'=>'Select Brand',
+            'header'=>'Brand',
     ]); ?>
 
 <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>

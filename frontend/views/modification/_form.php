@@ -9,6 +9,7 @@ use app\models\Modification;
 /* @var $this yii\web\View */
 /* @var $model app\models\Modification */
 /* @var $form yii\widgets\ActiveForm */
+/* @var $dropdownGenerations array */
 ?>
 
 <div class="modification-form">
@@ -16,9 +17,10 @@ use app\models\Modification;
     <?php $form = ActiveForm::begin(); ?>
 
     <?= $form->field($model, 'generation_id')->dropDownList(
-            ArrayHelper::map(\app\models\GenerationSearch::find()->asArray()->all(), 'id', 'name'),
+            Generation::getDropdownArray('id', 'name'),
         [
             'prompt'=>'Select Generation',
+            'header'=>'Generation',
         ]);
     ?>
 

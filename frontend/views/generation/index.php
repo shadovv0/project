@@ -2,13 +2,29 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
+use yii\helpers\ArrayHelper;
+use yii\helpers\Url;
 
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\GenerationSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
+/* @var $dropdownModels array */
 
 $this->title = 'Generations';
+$this->params['breadcrumbs'][] = array(
+    'label' => 'Country',
+    'url' => Url::to(['country/index']),
+);
+$this->params['breadcrumbs'][] = array(
+    'label' => 'Brand',
+    'url' => Url::to(['brand/index']),
+);
+$this->params['breadcrumbs'][] = array(
+        'label' => 'Model',
+        'url' => Url::to(['model/index']),
+);
 $this->params['breadcrumbs'][] = $this->title;
+
 ?>
 <div class="generation-index">
 
@@ -28,13 +44,23 @@ $this->params['breadcrumbs'][] = $this->title;
 
             'id',
             [
-             'attribute' => 'model_id',
-              'value' => 'model.name',
+                'attribute' => 'model_id',
+                'enableSorting' => true,
+                'value' => 'model.name',
+                'filter' => Html::dropDownList(
+                    'GenerationSearch[model_id]',
+                    $searchModel->model_id,
+                    $dropdownModels,
+                    [
+                        'class' => 'form-control',
+                        'prompt' => 'Choose Model',
+                    ]
+                )
             ],
             'name',
             'code',
             'dt_start',
-            //'dt_end',
+            'dt_end',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

@@ -3,6 +3,7 @@
 namespace app\models;
 
 use Yii;
+use yii\helpers\ArrayHelper;
 
 /**
  * This is the model class for table "country".
@@ -11,7 +12,7 @@ use Yii;
  * @property string|null $name
  * @property string|null $code
  */
-class Country extends \yii\db\ActiveRecord
+class Country extends BaseModel
 {
     /**
      * {@inheritdoc}

@@ -16,7 +16,7 @@ use Yii;
  * @property float|null $power
  * @property float|null $price
  */
-class Modification extends \yii\db\ActiveRecord
+class Modification extends BaseModel
 {
     /**
      * {@inheritdoc}
@@ -45,7 +45,7 @@ class Modification extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'generation_id' => 'Generation ID',
+            'generation_id' => 'Generation',
             'name' => 'Name',
             'code' => 'Code',
             'engine_type' => 'Engine Type',
@@ -57,5 +57,12 @@ class Modification extends \yii\db\ActiveRecord
     public function getGeneration()
     {
         return $this->hasOne(Generation::className(), ['id' => 'generation_id']);
+    }
+
+    public static function getDropdownArray($id = 'id', $name = 'name')
+    {
+        $res = parent::getDropdownArray($id,$name);
+
+        return $res;
     }
 }

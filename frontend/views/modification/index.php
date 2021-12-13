@@ -2,12 +2,31 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
+use yii\helpers\ArrayHelper;
+use yii\helpers\Url;
 
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\ModificationSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
+/* @var $dropdownGenerations array */
 
 $this->title = 'Modifications';
+$this->params['breadcrumbs'][] = array(
+    'label' => 'Country',
+    'url' => Url::to(['country/index']),
+);
+$this->params['breadcrumbs'][] = array(
+    'label' => 'Brand',
+    'url' => Url::to(['brand/index']),
+);
+$this->params['breadcrumbs'][] = array(
+    'label' => 'Model',
+    'url' => Url::to(['model/index']),
+);
+$this->params['breadcrumbs'][] = array(
+    'label' => 'Generation',
+    'url' => Url::to(['generation/index']),
+);
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="modification-index">
@@ -28,8 +47,18 @@ $this->params['breadcrumbs'][] = $this->title;
 
             'id',
             [
-             'attribute' => 'generation_id',
-              'value' => 'country.name',
+                'attribute' => 'generation_id',
+                'enableSorting' => true,
+                'value' => 'generation.name',
+                'filter' => Html::dropDownList(
+                    'ModificationSearch[generation_id]',
+                    $searchModel->generation_id,
+                    $dropdownGenerations,
+                    [
+                        'class' => 'form-control',
+                        'prompt' => 'Choose generation',
+                    ]
+                ),
             ],
             'name',
             'code',

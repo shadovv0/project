@@ -4,6 +4,7 @@ use yii\helpers\Html;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Brand */
+/* @var $dropdownCountries array */
 
 $this->title = 'Create Brand';
 $this->params['breadcrumbs'][] = ['label' => 'Brands', 'url' => ['index']];
@@ -15,6 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <?= $this->render('_form', [
         'model' => $model,
+        'dropdownCountries' => $dropdownCountries,
     ]) ?>
 
 </div>

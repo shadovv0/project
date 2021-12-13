@@ -58,14 +58,14 @@ class ModelSearch extends Model
 
         // grid filtering conditions
         $query->andFilterWhere([
-            'id' => $this->id,
-            'brand_id' => $this->brand_id,
+            'model.id' => $this->id,
+            'model.brand_id' => $this->brand_id,
             'sort' => $this->sort,
         ]);
 
-        $query->andFilterWhere(['like', 'name', $this->name])
-            ->andFilterWhere(['like', 'code', $this->code])
-            ->andFilterWhere(['like', 'class', $this->class]);
+        $query->andFilterWhere(['like', 'model.name', $this->name])
+            ->andFilterWhere(['like', 'model.code', $this->code])
+            ->andFilterWhere(['like', 'model.class', $this->class]);
 
         return $dataProvider;
     }

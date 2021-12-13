@@ -58,14 +58,14 @@ class GenerationSearch extends Generation
 
         // grid filtering conditions
         $query->andFilterWhere([
-            'id' => $this->id,
-            'model_id' => $this->model_id,
-            'dt_start' => $this->dt_start,
-            'dt_end' => $this->dt_end,
+            'generation.id' => $this->id,
+            'generation.model_id' => $this->model_id,
+            'generation.dt_start' => $this->dt_start,
+            'generation.dt_end' => $this->dt_end,
         ]);
 
-        $query->andFilterWhere(['like', 'name', $this->name])
-            ->andFilterWhere(['like', 'code', $this->code]);
+        $query->andFilterWhere(['like', 'generation.name', $this->name])
+            ->andFilterWhere(['like', 'generation.code', $this->code]);
 
         return $dataProvider;
     }

@@ -2,13 +2,25 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
+use yii\helpers\ArrayHelper;
+use yii\helpers\Url;
 
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\ModelSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
+/* @var $dropdownBrands array */
 
 $this->title = 'Models';
+$this->params['breadcrumbs'][] = array(
+    'label' => 'Country',
+    'url' => Url::to(['country/index']),
+);
+$this->params['breadcrumbs'][] = array(
+        'label' => 'Brand',
+        'url' => Url::to(['brand/index']),
+);
 $this->params['breadcrumbs'][] = $this->title;
+
 ?>
 <div class="model-index">
 
@@ -28,13 +40,23 @@ $this->params['breadcrumbs'][] = $this->title;
 
             'id',
             [
-             'attribute' => 'brand_id',
-             'value' => 'brand.name',
+                'attribute' => 'brand_id',
+                'enableSorting' => true,
+                'value' => 'brand.name',
+                'filter' => Html::dropDownList(
+                    'ModelSearch[brand_id]',
+                    $searchModel->brand_id,
+                    $dropdownBrands,
+                    [
+                        'class' => 'form-control',
+                        'prompt' => 'Choose brand',
+                    ]
+                ),
             ],
             'name',
             'code',
             'class',
-            //'sort',
+            'sort',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

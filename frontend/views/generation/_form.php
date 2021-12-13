@@ -11,6 +11,7 @@ use app\models\Generation;
 /* @var $this yii\web\View */
 /* @var $model app\models\Generation */
 /* @var $form yii\widgets\ActiveForm */
+/* @var $dropdownModels array */
 ?>
 
 <div class="generation-form">
@@ -18,9 +19,10 @@ use app\models\Generation;
     <?php $form = ActiveForm::begin(); ?>
 
     <?= $form->field($model, 'model_id')->dropDownList(
-            ArrayHelper::map(\app\models\ModelSearch::find()->asArray()->all(), 'id', 'name'),
+            Model::getDropdownArray('id', 'name'),
         [
            'prompt'=>'Select Model',
+            'header'=>'Model',
         ]); ?>
 
     <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>

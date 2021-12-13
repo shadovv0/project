@@ -4,6 +4,7 @@ namespace frontend\controllers;
 
 use app\models\Modification;
 use app\models\ModificationSearch;
+use app\models\Generation;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -40,9 +41,12 @@ class ModificationController extends Controller
         $searchModel = new ModificationSearch();
         $dataProvider = $searchModel->search($this->request->queryParams);
 
+        $dropdownGenerations = Generation::getDropdownArray();
+
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
+            'dropdownGenerations' => $dropdownGenerations,
         ]);
     }
 
@@ -76,8 +80,11 @@ class ModificationController extends Controller
             $model->loadDefaultValues();
         }
 
+        $dropdownGenerations = Generation::getDropdownArray();
+
         return $this->render('create', [
             'model' => $model,
+            'dropdownGenerations' => $dropdownGenerations,
         ]);
     }
 

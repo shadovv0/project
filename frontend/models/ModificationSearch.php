@@ -59,16 +59,16 @@ class ModificationSearch extends Modification
 
         // grid filtering conditions
         $query->andFilterWhere([
-            'id' => $this->id,
-            'generation_id' => $this->generation_id,
-            'engine_type' => $this->engine_type,
-            'engine_volume' => $this->engine_volume,
-            'power' => $this->power,
-            'price' => $this->price,
+            'modification.id' => $this->id,
+            'modification.generation_id' => $this->generation_id,
+            'modification.engine_type' => $this->engine_type,
+            'modification.engine_volume' => $this->engine_volume,
+            'modification.power' => $this->power,
+            'modification.price' => $this->price,
         ]);
 
-        $query->andFilterWhere(['like', 'name', $this->name])
-            ->andFilterWhere(['like', 'code', $this->code]);
+        $query->andFilterWhere(['like', 'modification.name', $this->name])
+            ->andFilterWhere(['like', 'modification.code', $this->code]);
 
         return $dataProvider;
     }

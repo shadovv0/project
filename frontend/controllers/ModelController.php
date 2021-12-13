@@ -2,6 +2,7 @@
 
 namespace frontend\controllers;
 
+use app\models\Brand;
 use app\models\Model;
 use app\models\ModelSearch;
 use yii\web\Controller;
@@ -40,9 +41,12 @@ class ModelController extends Controller
         $searchModel = new ModelSearch();
         $dataProvider = $searchModel->search($this->request->queryParams);
 
+        $dropdownBrands = Brand::getDropdownArray();
+
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
+            'dropdownBrands' => $dropdownBrands,
         ]);
     }
 
@@ -76,8 +80,11 @@ class ModelController extends Controller
             $model->loadDefaultValues();
         }
 
+        $dropdownBrands = Brand::getDropdownArray();
+
         return $this->render('create', [
             'model' => $model,
+            'dropdownBrands' => $dropdownBrands,
         ]);
     }
 

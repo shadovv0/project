@@ -13,7 +13,7 @@ use Yii;
  * @property string|null $class
  * @property int|null $sort
  */
-class Model extends \yii\db\ActiveRecord
+class Model extends BaseModel
 {
     /**
      * {@inheritdoc}
@@ -39,7 +39,7 @@ class Model extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'brand_id' => 'Brand ID',
+            'brand_id' => 'Brand',
             'name' => 'Name',
             'code' => 'Code',
             'class' => 'Class',
@@ -50,4 +50,13 @@ class Model extends \yii\db\ActiveRecord
     {
         return $this->hasOne(Brand::className(), ['id' => 'brand_id']);
     }
+
+
+    public static function getDropdownArray($id = 'id', $name = 'name') {
+        $res = parent::getDropdownArray($id,$name);
+
+        return $res;
+    }
+
+
 }

@@ -12,7 +12,7 @@ use Yii;
  * @property string|null $code
  */
 
-class Brand extends \yii\db\ActiveRecord
+class Brand extends BaseModel
 {
     /**
      * {@inheritdoc}
@@ -38,7 +38,7 @@ class Brand extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'country_id' => 'Country ID',
+            'country_id' => 'Country',
             'name' => 'Name',
             'code' => 'Code',
         ];
@@ -47,4 +47,12 @@ class Brand extends \yii\db\ActiveRecord
     {
         return $this->hasOne(Country::className(), ['id' => 'country_id']);
     }
+
+
+    public static function getDropdownArray($id = 'id', $name = 'name') {
+        $res = parent::getDropdownArray($id,$name);
+
+        return $res;
+    }
+
 }

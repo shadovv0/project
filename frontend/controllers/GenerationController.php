@@ -2,8 +2,8 @@
 
 namespace frontend\controllers;
 
-use app\models\Brand;
-use app\models\BrandSearch;
+use app\models\Model;
+use app\models\ModelSearch;
 use app\models\Generation;
 use app\models\GenerationSearch;
 use yii\web\Controller;
@@ -42,9 +42,12 @@ class GenerationController extends Controller
         $searchModel = new GenerationSearch();
         $dataProvider = $searchModel->search($this->request->queryParams);
 
+        $dropdownModels = Model::getDropdownArray();
+
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
+            'dropdownModels' => $dropdownModels,
         ]);
     }
 
@@ -78,8 +81,11 @@ class GenerationController extends Controller
             $model->loadDefaultValues();
         }
 
+        $dropdownModels = Model::getDropdownArray();
+
         return $this->render('create', [
             'model' => $model,
+            'dropdownModels' => $dropdownModels,
         ]);
     }
 
