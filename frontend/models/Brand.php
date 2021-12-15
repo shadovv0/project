@@ -28,6 +28,7 @@ class Brand extends BaseModel
     {
         return [
             [['country_id'], 'integer'],
+            [['country_id', 'name'], 'required'],
             [['name', 'code'], 'string', 'max' => 255],
         ];
     }

@@ -29,6 +29,7 @@ class Model extends BaseModel
     {
         return [
             [['brand_id', 'sort'], 'integer'],
+            [['brand_id', 'name'], 'required'],
             [['name', 'code', 'class'], 'string', 'max' => 255],
         ];
     }

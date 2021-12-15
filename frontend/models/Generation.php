@@ -29,6 +29,7 @@ class Generation extends BaseModel
     {
         return [
             [['model_id'], 'integer'],
+            [['model_id', 'name'], 'required'],
             [['dt_start', 'dt_end'], 'safe'],
             [['name', 'code'], 'string', 'max' => 255],
         ];

@@ -33,6 +33,7 @@ class Modification extends BaseModel
     {
         return [
             [['generation_id', 'engine_type'], 'integer'],
+            [['generation_id', 'name'], 'required'],
             [['engine_volume', 'power', 'price'], 'number'],
             [['name', 'code'], 'string', 'max' => 255],
         ];
