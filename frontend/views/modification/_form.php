@@ -36,6 +36,8 @@ use app\models\Modification;
 
     <?= $form->field($model, 'price')->textInput() ?>
 
+    <?= $form->field($model, 'transmission')->textInput(['maxlength' => true]) ?>
+
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
     </div>

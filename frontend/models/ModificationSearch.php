@@ -18,7 +18,7 @@ class ModificationSearch extends Modification
     {
         return [
             [['id', 'generation_id', 'engine_type'], 'integer'],
-            [['name', 'code'], 'safe'],
+            [['name', 'code', 'transmission'], 'safe'],
             [['engine_volume', 'power', 'price'], 'number'],
         ];
     }
@@ -65,10 +65,12 @@ class ModificationSearch extends Modification
             'modification.engine_volume' => $this->engine_volume,
             'modification.power' => $this->power,
             'modification.price' => $this->price,
+            'modification.transmission' => $this->transmission,
         ]);
 
         $query->andFilterWhere(['like', 'modification.name', $this->name])
-            ->andFilterWhere(['like', 'modification.code', $this->code]);
+            ->andFilterWhere(['like', 'modification.code', $this->code])
+            ->andFilterWhere(['like', 'modification.transmission', $this->transmission]);
 
         return $dataProvider;
     }

@@ -37,6 +37,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'engine_volume',
             'power',
             'price',
+            'transmission',
         ],
     ]) ?>
 

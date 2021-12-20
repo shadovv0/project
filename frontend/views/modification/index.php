@@ -63,9 +63,10 @@ $this->params['breadcrumbs'][] = $this->title;
             'name',
             'code',
             'engine_type',
-            //'engine_volume',
-            //'power',
-            //'price',
+            'engine_volume',
+            'power',
+            'price',
+            'transmission',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

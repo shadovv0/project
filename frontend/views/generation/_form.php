@@ -5,6 +5,7 @@ use yii\widgets\ActiveForm;
 use yii\helpers\ArrayHelper;
 use app\models\Model;
 use app\models\Generation;
+use kartik\date\DatePicker;
 
 
 /* @var $this yii\web\View */
@@ -30,7 +31,7 @@ use app\models\Generation;
 
     <?= $form->field($model, 'code')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'dt_start')->textInput() ?>
+    <?= $form->field($model, 'dt_start')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'dt_end')->textInput() ?>
 

@@ -15,6 +15,7 @@ use Yii;
  * @property float|null $engine_volume
  * @property float|null $power
  * @property float|null $price
+ * @property string|null $transmission
  */
 class Modification extends BaseModel
 {
@@ -35,7 +36,7 @@ class Modification extends BaseModel
             [['generation_id', 'engine_type'], 'integer'],
             [['generation_id', 'name'], 'required'],
             [['engine_volume', 'power', 'price'], 'number'],
-            [['name', 'code'], 'string', 'max' => 255],
+            [['name', 'code', 'transmission'], 'string', 'max' => 255],
         ];
     }
 
@@ -53,6 +54,7 @@ class Modification extends BaseModel
             'engine_volume' => 'Engine Volume',
             'power' => 'Power',
             'price' => 'Price',
+            'transmission' => 'Transmission',
         ];
     }
     public function getGeneration()

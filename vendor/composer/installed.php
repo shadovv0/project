@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => '601c24335a855371a221b1f5d6edd93f45e0ca15',
+    'reference' => '16727d63b47b11a6d7e846ed104fd31b61e45e44',
     'name' => 'yiisoft/yii2-app-advanced',
   ),
   'versions' => 
@@ -19,6 +19,15 @@
       array (
       ),
       'reference' => '0bc8d1e30e96183e4f36db9dc79caead300beff4',
+    ),
+    'bower-asset/bootstrap' => 
+    array (
+      'pretty_version' => 'v5.1.3',
+      'version' => '5.1.3.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '1a6fdfae6be09b09eaced8f0e442ca6f7680a61e',
     ),
     'bower-asset/inputmask' => 
     array (
@@ -787,7 +796,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => '601c24335a855371a221b1f5d6edd93f45e0ca15',
+      'reference' => '16727d63b47b11a6d7e846ed104fd31b61e45e44',
     ),
     'yiisoft/yii2-bootstrap4' => 
     array (
@@ -797,6 +806,15 @@
       array (
       ),
       'reference' => 'e6d0e58f43d3910129d554ac183aac17f65be639',
+    ),
+    'yiisoft/yii2-bootstrap5' => 
+    array (
+      'pretty_version' => '2.0.2',
+      'version' => '2.0.2.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '258583d8a61c7a32d7164d9a6dfeb9b9ea0e83fc',
     ),
     'yiisoft/yii2-composer' => 
     array (
