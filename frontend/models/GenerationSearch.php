@@ -18,7 +18,7 @@ class GenerationSearch extends Generation
     {
         return [
             [['id', 'model_id'], 'integer'],
-            [['name', 'code', 'dt_start', 'dt_end'], 'safe'],
+            [['name', 'code', 'dt_start', 'dt_end',], 'safe'],
         ];
     }
 

@@ -2,6 +2,8 @@
 
 namespace frontend\controllers;
 
+use app\models\UploadImage;
+use Yii;
 use app\models\Model;
 use app\models\ModelSearch;
 use app\models\Generation;
@@ -9,6 +11,9 @@ use app\models\GenerationSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\Response;
+use yii\web\UploadedFile;
+use yii\widgets\ActiveForm;
 
 /**
  * GenerationController implements the CRUD actions for Brand model.
@@ -74,8 +79,27 @@ class GenerationController extends Controller
         $model = new Generation();
 
         if ($this->request->isPost) {
-            if ($model->load($this->request->post()) && $model->save()) {
-                return $this->redirect(['view', 'id' => $model->id]);
+            if ($model->load($this->request->post())) {
+
+                $file = new UploadImage();
+                $file->imageFile = UploadedFile::getInstance($model, 'avatar');
+
+                try {
+                    if (!$file->upload()) {
+                        throw new \Exception($file->getErrors());
+                    }
+                } catch (\Exception $e) {
+                    $model->addError('avatar', $file->errors);
+                    return;
+                }
+
+                $model->avatar = $file->imagePath;
+
+                if ($model->save()) {
+                    return $this->redirect(['view', 'id' => $model->id]);
+                }
+
+
             }
         } else {
             $model->loadDefaultValues();
@@ -100,8 +124,23 @@ class GenerationController extends Controller
     {
         $model = $this->findModel($id);
 
-        if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+        if ($this->request->isPost && $model->load($this->request->post())) {
+            $file = new UploadImage();
+            $file->imageFile = UploadedFile::getInstance($model, 'avatar');
+
+            try {
+                if (!$file->validate() || !$file->upload()) {
+                    throw new \Exception(json_encode($file->getErrors()));
+                }
+            } catch (\Exception $e) {
+                $model->addError('avatar', $file->errors);
+            }
+
+            $model->avatar = $file->imagePath;
+
+            if ($model->save()) {
+                return $this->redirect(['view', 'id' => $model->id]);
+            }
         }
 
         return $this->render('update', [
@@ -138,4 +177,5 @@ class GenerationController extends Controller
 
         throw new NotFoundHttpException('The requested page does not exist.');
     }
-}
+
+    }

@@ -3,7 +3,6 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use yii\helpers\ArrayHelper;
-use app\models\Brand;
 use app\models\Model;
 use app\models\Generation;
 
@@ -16,7 +15,9 @@ use app\models\Generation;
 
 <div class="generation-form">
 
-    <?php $form = ActiveForm::begin(); ?>
+    <?php $form = ActiveForm::begin([
+//        'enableAjaxValidation' => true,
+    ])?>
 
     <?= $form->field($model, 'model_id')->dropDownList(
             Model::getDropdownArray('id', 'name'),
@@ -32,6 +33,8 @@ use app\models\Generation;
     <?= $form->field($model, 'dt_start')->textInput() ?>
 
     <?= $form->field($model, 'dt_end')->textInput() ?>
+
+    <?= $form->field($model, 'avatar')->fileInput() ?>
 
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>

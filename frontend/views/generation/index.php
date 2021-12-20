@@ -4,6 +4,7 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Url;
+use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\GenerationSearch */
@@ -20,8 +21,8 @@ $this->params['breadcrumbs'][] = array(
     'url' => Url::to(['brand/index']),
 );
 $this->params['breadcrumbs'][] = array(
-        'label' => 'Model',
-        'url' => Url::to(['model/index']),
+    'label' => 'Model',
+    'url' => Url::to(['model/index']),
 );
 $this->params['breadcrumbs'][] = $this->title;
 
@@ -58,6 +59,13 @@ $this->params['breadcrumbs'][] = $this->title;
                 )
             ],
             'name',
+            [
+                'attribute' => 'avatar',
+                'format' => 'raw',
+                'value' => function($data) {
+                    return Html::img($data->avatar, ['width' => '250px']);
+                }
+            ],
             'code',
             'dt_start',
             'dt_end',

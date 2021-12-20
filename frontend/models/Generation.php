@@ -1,6 +1,9 @@
 <?php
+
 namespace app\models;
 use Yii;
+
+
 
 /**
  * This is the model class for a table "generation".
@@ -11,6 +14,7 @@ use Yii;
  * @property string|null $code
  * @property string|null $dt_start
  * @property string|null $dt_end
+ * @property string|null $avatar
  */
 class Generation extends BaseModel
 {
@@ -28,10 +32,11 @@ class Generation extends BaseModel
     public function rules()
     {
         return [
-            [['model_id'], 'integer'],
+            [['model_id',], 'integer'],
             [['model_id', 'name'], 'required'],
             [['dt_start', 'dt_end'], 'safe'],
-            [['name', 'code'], 'string', 'max' => 255],
+            [['name', 'code',], 'string', 'max' => 255],
+            [['avatar',], 'string'],
         ];
     }
 
@@ -47,6 +52,7 @@ class Generation extends BaseModel
             'code' => 'Code',
             'dt_start' => 'Dt Start',
             'dt_end' => 'Dt End',
+            'avatar' => 'Avatar',
         ];
     }
     public function getModel()
@@ -60,5 +66,6 @@ class Generation extends BaseModel
 
         return $res;
     }
+
 
 }
