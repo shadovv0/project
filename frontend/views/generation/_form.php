@@ -6,7 +6,7 @@ use yii\helpers\ArrayHelper;
 use app\models\Model;
 use app\models\Generation;
 use kartik\date\DatePicker;
-
+use yii\widgets\Pjax;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Generation */
@@ -31,9 +31,19 @@ use kartik\date\DatePicker;
 
     <?= $form->field($model, 'code')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'dt_start')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'dt_start')->widget(DatePicker::classname(), [
+            'options' => ['placeholder' => 'Enter date ...'],
+        'pluginOptions' => [
+                'autoclose' => true
+        ]
+    ]); ?>
 
-    <?= $form->field($model, 'dt_end')->textInput() ?>
+    <?= $form->field($model, 'dt_end')->widget(DatePicker::classname(), [
+        'options' => ['placeholder' => 'Enter date ...'],
+        'pluginOptions' => [
+            'autoclose' => true
+        ]
+    ]); ?>
 
     <?= $form->field($model, 'avatar')->fileInput() ?>
 

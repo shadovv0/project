@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => '16727d63b47b11a6d7e846ed104fd31b61e45e44',
+    'reference' => '90a87b7d37a5062088f4ece44e3a8242957c9f43',
     'name' => 'yiisoft/yii2-app-advanced',
   ),
   'versions' => 
@@ -47,6 +47,15 @@
       ),
       'reference' => 'e786e3d9707ffd9b0dd330ca135b66344dcef85a',
     ),
+    'bower-asset/jquery-ui' => 
+    array (
+      'pretty_version' => '1.12.1',
+      'version' => '1.12.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '44ecf3794cc56b65954cc19737234a3119d036cc',
+    ),
     'bower-asset/punycode' => 
     array (
       'pretty_version' => 'v1.3.2',
@@ -76,12 +85,12 @@
     ),
     'codeception/codeception' => 
     array (
-      'pretty_version' => '4.1.24',
-      'version' => '4.1.24.0',
+      'pretty_version' => '4.1.27',
+      'version' => '4.1.27.0',
       'aliases' => 
       array (
       ),
-      'reference' => '1fc3a8f4d6cf7350e1b69afd136708cfffc89e9e',
+      'reference' => '2d9a11e6f487e3bcc17e22b7552fb6a10cec5c7c',
     ),
     'codeception/lib-asserts' => 
     array (
@@ -139,12 +148,12 @@
     ),
     'codeception/stub' => 
     array (
-      'pretty_version' => '3.7.0',
-      'version' => '3.7.0.0',
+      'pretty_version' => '4.0.0',
+      'version' => '4.0.0.0',
       'aliases' => 
       array (
       ),
-      'reference' => '468dd5fe659f131fc997f5196aad87512f9b1304',
+      'reference' => '4c9cf3e19bd5f064e08e7f3ba6be651c218dc6ae',
     ),
     'codeception/verify' => 
     array (
@@ -796,7 +805,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => '16727d63b47b11a6d7e846ed104fd31b61e45e44',
+      'reference' => '90a87b7d37a5062088f4ece44e3a8242957c9f43',
     ),
     'yiisoft/yii2-bootstrap4' => 
     array (
@@ -851,6 +860,15 @@
       array (
       ),
       'reference' => 'eb14e9cc4c9d80a59e1252e5200600b42aa2bfbf',
+    ),
+    'yiisoft/yii2-jui' => 
+    array (
+      'pretty_version' => '2.0.7',
+      'version' => '2.0.7.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'ce45c16d4fbbe7d1c516d8d0e8311e07f6138eed',
     ),
     'yiisoft/yii2-swiftmailer' => 
     array (

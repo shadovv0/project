@@ -6,6 +6,7 @@ use yii\helpers\ArrayHelper;
 use app\models\Generation;
 use app\models\Modification;
 
+
 /* @var $this yii\web\View */
 /* @var $model app\models\Modification */
 /* @var $form yii\widgets\ActiveForm */

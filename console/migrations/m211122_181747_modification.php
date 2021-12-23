@@ -21,6 +21,7 @@ class m211122_181747_modification extends Migration
             'engine_volume' => $this->float(),
             'power' => $this->float(),
             'price' => $this->float(),
+            'transmission' => $this->string(),
         ]);
     }
 
