@@ -12,7 +12,7 @@ class m211220_185957_transmission extends Migration
      */
     public function safeUp()
     {
-        $this->addColumn('modification', 'transmission', $this->text()->null());
+        $this->addColumn('modification', 'transmission', $this->string());
     }
 
     /**

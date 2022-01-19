@@ -84,4 +84,31 @@ return array (
       '@yii/bootstrap5' => $vendorDir . '/yiisoft/yii2-bootstrap5/src',
     ),
   ),
+  'andrewdanilov/yii2-fontawesome' => 
+  array (
+    'name' => 'andrewdanilov/yii2-fontawesome',
+    'version' => '1.0.0.0',
+    'alias' => 
+    array (
+      '@andrewdanilov/fontawesome' => $vendorDir . '/andrewdanilov/yii2-fontawesome/src',
+    ),
+  ),
+  'andrewdanilov/yii2-grid-tools' => 
+  array (
+    'name' => 'andrewdanilov/yii2-grid-tools',
+    'version' => '1.0.3.0',
+    'alias' => 
+    array (
+      '@andrewdanilov/gridtools' => $vendorDir . '/andrewdanilov/yii2-grid-tools/src',
+    ),
+  ),
+  'andrewdanilov/yii2-admin-panel' => 
+  array (
+    'name' => 'andrewdanilov/yii2-admin-panel',
+    'version' => '2.0.6.0',
+    'alias' => 
+    array (
+      '@andrewdanilov/adminpanel' => $vendorDir . '/andrewdanilov/yii2-admin-panel/src',
+    ),
+  ),
 );

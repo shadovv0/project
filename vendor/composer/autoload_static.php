@@ -53,6 +53,12 @@ class ComposerStaticInit17742c1fca1e838e07af56c8a49037c2
         array (
             'cebe\\markdown\\' => 14,
         ),
+        'a' => 
+        array (
+            'andrewdanilov\\gridtools\\' => 24,
+            'andrewdanilov\\fontawesome\\' => 26,
+            'andrewdanilov\\adminpanel\\' => 25,
+        ),
         'W' => 
         array (
             'Webmozart\\Assert\\' => 17,
@@ -170,6 +176,18 @@ class ComposerStaticInit17742c1fca1e838e07af56c8a49037c2
         'cebe\\markdown\\' => 
         array (
             0 => __DIR__ . '/..' . '/cebe/markdown',
+        ),
+        'andrewdanilov\\gridtools\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/andrewdanilov/yii2-grid-tools/src',
+        ),
+        'andrewdanilov\\fontawesome\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/andrewdanilov/yii2-fontawesome/src',
+        ),
+        'andrewdanilov\\adminpanel\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/andrewdanilov/yii2-admin-panel/src',
         ),
         'Webmozart\\Assert\\' => 
         array (

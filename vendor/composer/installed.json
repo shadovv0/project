@@ -1,6 +1,159 @@
 {
     "packages": [
         {
+            "name": "andrewdanilov/yii2-admin-panel",
+            "version": "2.0.6",
+            "version_normalized": "2.0.6.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/AndrewDanilov/yii2-admin-panel.git",
+                "reference": "6b7bb00ef4ab86384ea72576b689b9b02dc7407f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/AndrewDanilov/yii2-admin-panel/zipball/6b7bb00ef4ab86384ea72576b689b9b02dc7407f",
+                "reference": "6b7bb00ef4ab86384ea72576b689b9b02dc7407f",
+                "shasum": ""
+            },
+            "require": {
+                "andrewdanilov/yii2-grid-tools": "~1.0.0",
+                "php": ">=5.6.0",
+                "yiisoft/yii2": "~2.0.0"
+            },
+            "time": "2021-10-02T14:17:28+00:00",
+            "type": "yii2-extension",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "andrewdanilov\\adminpanel\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "AndrewDanilov",
+                    "email": "andrewdanilov@gmail.com"
+                }
+            ],
+            "description": "Simple Admin Panel",
+            "keywords": [
+                "Users",
+                "admin",
+                "extension",
+                "manager",
+                "panel",
+                "yii2"
+            ],
+            "support": {
+                "issues": "https://github.com/AndrewDanilov/yii2-admin-panel/issues",
+                "source": "https://github.com/AndrewDanilov/yii2-admin-panel/tree/2.0.6"
+            },
+            "install-path": "../andrewdanilov/yii2-admin-panel"
+        },
+        {
+            "name": "andrewdanilov/yii2-fontawesome",
+            "version": "1.0.0",
+            "version_normalized": "1.0.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/AndrewDanilov/yii2-fontawesome.git",
+                "reference": "9c9af733913a6c14786799c14bb3de7866c4bb14"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/AndrewDanilov/yii2-fontawesome/zipball/9c9af733913a6c14786799c14bb3de7866c4bb14",
+                "reference": "9c9af733913a6c14786799c14bb3de7866c4bb14",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.6.0",
+                "yiisoft/yii2": "^2.0.0"
+            },
+            "time": "2021-05-11T16:30:32+00:00",
+            "type": "yii2-extension",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "andrewdanilov\\fontawesome\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "AndrewDanilov",
+                    "email": "andrewdanilov@gmail.com"
+                }
+            ],
+            "description": "Fontawesome Asset Bundle",
+            "keywords": [
+                "FontAwesome",
+                "asset",
+                "extension",
+                "yii2"
+            ],
+            "support": {
+                "issues": "https://github.com/AndrewDanilov/yii2-fontawesome/issues",
+                "source": "https://github.com/AndrewDanilov/yii2-fontawesome/tree/1.0.0"
+            },
+            "install-path": "../andrewdanilov/yii2-fontawesome"
+        },
+        {
+            "name": "andrewdanilov/yii2-grid-tools",
+            "version": "1.0.3",
+            "version_normalized": "1.0.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/AndrewDanilov/yii2-grid-tools.git",
+                "reference": "157a1b30677c72ce31c068cba1fd168329c73418"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/AndrewDanilov/yii2-grid-tools/zipball/157a1b30677c72ce31c068cba1fd168329c73418",
+                "reference": "157a1b30677c72ce31c068cba1fd168329c73418",
+                "shasum": ""
+            },
+            "require": {
+                "andrewdanilov/yii2-fontawesome": "~1.0.0",
+                "php": ">=5.6.0",
+                "yiisoft/yii2": "^2.0.0"
+            },
+            "time": "2021-05-11T16:37:38+00:00",
+            "type": "yii2-extension",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "andrewdanilov\\gridtools\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "AndrewDanilov",
+                    "email": "andrewdanilov@gmail.com"
+                }
+            ],
+            "description": "Tools for grids",
+            "keywords": [
+                "extension",
+                "grid",
+                "yii2"
+            ],
+            "support": {
+                "issues": "https://github.com/AndrewDanilov/yii2-grid-tools/issues",
+                "source": "https://github.com/AndrewDanilov/yii2-grid-tools/tree/1.0.3"
+            },
+            "install-path": "../andrewdanilov/yii2-grid-tools"
+        },
+        {
             "name": "behat/gherkin",
             "version": "v4.9.0",
             "version_normalized": "4.9.0.0",

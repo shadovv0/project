@@ -6,11 +6,38 @@
     'aliases' => 
     array (
     ),
-    'reference' => '90a87b7d37a5062088f4ece44e3a8242957c9f43',
+    'reference' => '6636c17c5e88727ee46cdd2e039ef3fb43f081b1',
     'name' => 'yiisoft/yii2-app-advanced',
   ),
   'versions' => 
   array (
+    'andrewdanilov/yii2-admin-panel' => 
+    array (
+      'pretty_version' => '2.0.6',
+      'version' => '2.0.6.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '6b7bb00ef4ab86384ea72576b689b9b02dc7407f',
+    ),
+    'andrewdanilov/yii2-fontawesome' => 
+    array (
+      'pretty_version' => '1.0.0',
+      'version' => '1.0.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '9c9af733913a6c14786799c14bb3de7866c4bb14',
+    ),
+    'andrewdanilov/yii2-grid-tools' => 
+    array (
+      'pretty_version' => '1.0.3',
+      'version' => '1.0.3.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '157a1b30677c72ce31c068cba1fd168329c73418',
+    ),
     'behat/gherkin' => 
     array (
       'pretty_version' => 'v4.9.0',
@@ -805,7 +832,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => '90a87b7d37a5062088f4ece44e3a8242957c9f43',
+      'reference' => '6636c17c5e88727ee46cdd2e039ef3fb43f081b1',
     ),
     'yiisoft/yii2-bootstrap4' => 
     array (
