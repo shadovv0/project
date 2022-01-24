@@ -28,13 +28,18 @@ AppAsset::register($this);
 <header>
     <?php
     NavBar::begin([
-        'brandLabel' => Yii::$app->name,
+        'brandLabel' => 'Cars from Nick',
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
             'class' => 'navbar navbar-expand-md navbar-dark bg-dark fixed-top',
         ],
     ]);
     $menuItems = [
+        ['label' => 'Country', 'url' => ['/country/index']],
+        ['label' => 'Brand', 'url' => ['/brand/index']],
+        ['label' => 'Model', 'url' => ['/model/index']],
+        ['label' => 'Generation', 'url' => ['/generation/index']],
+        ['label' => 'Modification', 'url' => ['/modification/index']],
         ['label' => 'Home', 'url' => ['/site/index']],
     ];
     if (Yii::$app->user->isGuest) {
@@ -69,8 +74,8 @@ AppAsset::register($this);
 
 <footer class="footer mt-auto py-3 text-muted">
     <div class="container">
-        <p class="float-left">&copy; <?= Html::encode(Yii::$app->name) ?> <?= date('Y') ?></p>
-        <p class="float-right"><?= Yii::powered() ?></p>
+        <p class="float-left">Education</p>
+        <p class="float-right">Information</p>
     </div>
 </footer>
 

@@ -77,6 +77,10 @@ a.desc:after {
         width: 100%;
         padding: 10px 0;
     }
+    .navbar-nav.nav .nav-item:nth-last-child(2) {
+        width: 100%;
+        margin-left: auto;
+    }
 }
 
 .nav > li > form > button.logout:focus,
@@ -87,4 +91,12 @@ a.desc:after {
 
 .nav > li > form > button.logout:focus {
     outline: none;
+}
+
+.navbar-nav.nav {
+    width: 100%;
+}
+
+.navbar-nav.nav .nav-item:nth-last-child(2) {
+    margin-left: auto;
 }

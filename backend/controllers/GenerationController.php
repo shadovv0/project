@@ -1,13 +1,13 @@
 <?php
 
-namespace frontend\controllers;
+namespace backend\controllers;
 
-use app\models\UploadImage;
+use common\models\UploadImage;
 use Yii;
-use app\models\Model;
-use app\models\ModelSearch;
-use app\models\Generation;
-use app\models\GenerationSearch;
+use common\models\Model;
+use common\models\ModelSearch;
+use common\models\Generation;
+use common\models\GenerationSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -178,4 +178,4 @@ class GenerationController extends Controller
         throw new NotFoundHttpException('The requested page does not exist.');
     }
 
-}
+    }

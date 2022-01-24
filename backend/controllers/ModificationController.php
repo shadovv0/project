@@ -1,24 +1,18 @@
 <?php
 
-namespace frontend\controllers;
+namespace backend\controllers;
 
-use app\models\UploadImage;
-use Yii;
-use app\models\Model;
-use app\models\ModelSearch;
-use app\models\Generation;
-use app\models\GenerationSearch;
+use common\models\Modification;
+use common\models\ModificationSearch;
+use common\models\Generation;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-use yii\web\Response;
-use yii\web\UploadedFile;
-use yii\widgets\ActiveForm;
 
 /**
- * GenerationController implements the CRUD actions for Brand model.
+ * ModificationController implements the CRUD actions for Modification model.
  */
-class GenerationController extends Controller
+class ModificationController extends Controller
 {
     /**
      * @inheritDoc
@@ -39,25 +33,25 @@ class GenerationController extends Controller
     }
 
     /**
-     * Lists all Generation models.
+     * Lists all Modification models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new GenerationSearch();
+        $searchModel = new ModificationSearch();
         $dataProvider = $searchModel->search($this->request->queryParams);
 
-        $dropdownModels = Model::getDropdownArray();
+        $dropdownGenerations = Generation::getDropdownArray();
 
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
-            'dropdownModels' => $dropdownModels,
+            'dropdownGenerations' => $dropdownGenerations,
         ]);
     }
 
     /**
-     * Displays a single Generation model.
+     * Displays a single Modification model.
      * @param int $id ID
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
@@ -70,51 +64,32 @@ class GenerationController extends Controller
     }
 
     /**
-     * Creates a new Generation model.
+     * Creates a new Modification model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new Generation();
+        $model = new Modification();
 
         if ($this->request->isPost) {
-            if ($model->load($this->request->post())) {
-
-                $file = new UploadImage();
-                $file->imageFile = UploadedFile::getInstance($model, 'avatar');
-
-                try {
-                    if (!$file->upload()) {
-                        throw new \Exception($file->getErrors());
-                    }
-                } catch (\Exception $e) {
-                    $model->addError('avatar', $file->errors);
-                    return;
-                }
-
-                $model->avatar = $file->imagePath;
-
-                if ($model->save()) {
-                    return $this->redirect(['view', 'id' => $model->id]);
-                }
-
-
+            if ($model->load($this->request->post()) && $model->save()) {
+                return $this->redirect(['view', 'id' => $model->id]);
             }
         } else {
             $model->loadDefaultValues();
         }
 
-        $dropdownModels = Model::getDropdownArray();
+        $dropdownGenerations = Generation::getDropdownArray();
 
         return $this->render('create', [
             'model' => $model,
-            'dropdownModels' => $dropdownModels,
+            'dropdownGenerations' => $dropdownGenerations,
         ]);
     }
 
     /**
-     * Updates an existing Generation model.
+     * Updates an existing Modification model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param int $id ID
      * @return mixed
@@ -124,23 +99,8 @@ class GenerationController extends Controller
     {
         $model = $this->findModel($id);
 
-        if ($this->request->isPost && $model->load($this->request->post())) {
-            $file = new UploadImage();
-            $file->imageFile = UploadedFile::getInstance($model, 'avatar');
-
-            try {
-                if (!$file->validate() || !$file->upload()) {
-                    throw new \Exception(json_encode($file->getErrors()));
-                }
-            } catch (\Exception $e) {
-                $model->addError('avatar', $file->errors);
-            }
-
-            $model->avatar = $file->imagePath;
-
-            if ($model->save()) {
-                return $this->redirect(['view', 'id' => $model->id]);
-            }
+        if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
+            return $this->redirect(['view', 'id' => $model->id]);
         }
 
         return $this->render('update', [
@@ -149,7 +109,7 @@ class GenerationController extends Controller
     }
 
     /**
-     * Deletes an existing Generation model.
+     * Deletes an existing Modification model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param int $id ID
      * @return mixed
@@ -163,19 +123,18 @@ class GenerationController extends Controller
     }
 
     /**
-     * Finds the Generation model based on its primary key value.
+     * Finds the Modification model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param int $id ID
-     * @return Generation the loaded model
+     * @return Modification the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Generation::findOne($id)) !== null) {
+        if (($model = Modification::findOne($id)) !== null) {
             return $model;
         }
 
         throw new NotFoundHttpException('The requested page does not exist.');
     }
-
 }
