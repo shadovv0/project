@@ -2,41 +2,25 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
-use yii\helpers\ArrayHelper;
+use yii\db\ActiveRecord;
 use yii\helpers\Url;
-use yii\widgets\ActiveForm;
+use common\models\Generation;
 
 /* @var $this yii\web\View */
-/* @var $searchModel app\models\GenerationSearch */
-/* @var $dataProvider yii\data\ActiveDataProvider */
-/* @var $dropdownModels array */
+/* @var $generations \common\models\Model[] */
 
 $this->title = 'Generations';
-$this->params['breadcrumbs'][] = array(
-    'label' => 'Country',
-    'url' => Url::to(['country/index']),
-);
-$this->params['breadcrumbs'][] = array(
-    'label' => 'Brand',
-    'url' => Url::to(['brand/index']),
-);
-$this->params['breadcrumbs'][] = array(
-    'label' => 'Model',
-    'url' => Url::to(['model/index']),
-);
 $this->params['breadcrumbs'][] = $this->title;
-
 ?>
+
 <div class="generation-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
-
-    <?= Html::a('GT-R', '/modification/index', ['class' => 'btn btn-outline-secondary']) ?>
-    <?= Html::a('avant', '/modification/index', ['class' => 'btn btn-outline-secondary']) ?>
-    <?= Html::a('8', '/modification/index', ['class' => 'btn btn-outline-secondary']) ?>
-    <?= Html::a('avant', '/modification/index', ['class' => 'btn btn-outline-secondary']) ?>
-    <?= Html::a('govno', '/modification/index', ['class' => 'btn btn-outline-secondary']) ?>
-
+    <p>
+        <?php foreach ($generations as $generation): ?>
+            <?= Html::a($generation->name, Url::to(['generation/view', 'code' => $generation->code]), ['class' => 'btn btn-outline-secondary']) ?>
+        <?php endforeach; ?>
+    </p>
 
 </div>

@@ -1,7 +1,10 @@
 <?php
 
 namespace common\models;
+
 use Yii;
+use yii\db\ActiveRecord;
+use yii\helpers\ArrayHelper;
 
 /**
  * This is the model class for table "model".
@@ -47,17 +50,9 @@ class Model extends BaseModel
             'sort' => 'Sort',
         ];
     }
-    public function getBrand()
+    public function getGenerations()
     {
-        return $this->hasOne(Brand::className(), ['id' => 'brand_id']);
+        return $this->hasMany(Generation::class, ['model_id' => 'id']);
     }
-
-
-    public static function getDropdownArray($id = 'id', $name = 'name') {
-        $res = parent::getDropdownArray($id,$name);
-
-        return $res;
-    }
-
 
 }

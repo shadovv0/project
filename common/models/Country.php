@@ -4,6 +4,7 @@ namespace common\models;
 
 use Yii;
 use yii\helpers\ArrayHelper;
+use yii\db\ActiveRecord;
 
 /**
  * This is the model class for table "country".
@@ -12,7 +13,7 @@ use yii\helpers\ArrayHelper;
  * @property string|null $name
  * @property string|null $code
  */
-class Country extends BaseModel
+class Country extends ActiveRecord
 {
     /**
      * {@inheritdoc}
@@ -42,5 +43,10 @@ class Country extends BaseModel
             'name' => 'Name',
             'code' => 'Code',
         ];
+    }
+
+    public function getBrands()
+    {
+        return $this->hasMany(Brand::class, ['country_id' => 'id']);
     }
 }

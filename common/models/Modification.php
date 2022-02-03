@@ -62,10 +62,5 @@ class Modification extends BaseModel
         return $this->hasOne(Generation::className(), ['id' => 'generation_id']);
     }
 
-    public static function getDropdownArray($id = 'id', $name = 'name')
-    {
-        $res = parent::getDropdownArray($id,$name);
 
-        return $res;
-    }
 }

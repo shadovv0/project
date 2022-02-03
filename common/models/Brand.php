@@ -1,7 +1,10 @@
 <?php
 
 namespace common\models;
+
 use Yii;
+use yii\helpers\ArrayHelper;
+use yii\db\ActiveRecord;
 
 /**
  * This is the model class for table "brand".
@@ -12,7 +15,7 @@ use Yii;
  * @property string|null $code
  */
 
-class Brand extends BaseModel
+class Brand extends ActiveRecord
 {
     /**
      * {@inheritdoc}
@@ -21,6 +24,7 @@ class Brand extends BaseModel
     {
         return 'brand';
     }
+
     /**
      * {@inheritdoc}
      */
@@ -32,6 +36,7 @@ class Brand extends BaseModel
             [['name', 'code'], 'string', 'max' => 255],
         ];
     }
+
     /**
      * {@inheritdoc}
      */
@@ -44,16 +49,9 @@ class Brand extends BaseModel
             'code' => 'Code',
         ];
     }
-    public function getCountry()
+
+    public function getModels()
     {
-        return $this->hasOne(Country::className(), ['id' => 'country_id']);
+        return $this->hasMany(Model::class, ['brand_id' => 'id']);
     }
-
-
-    public static function getDropdownArray($id = 'id', $name = 'name') {
-        $res = parent::getDropdownArray($id,$name);
-
-        return $res;
-    }
-
 }

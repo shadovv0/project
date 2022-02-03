@@ -1,8 +1,10 @@
 <?php
 
 namespace common\models;
-use Yii;
 
+use Yii;
+use yii\db\ActiveRecord;
+use yii\helpers\ArrayHelper;
 
 
 /**
@@ -16,7 +18,7 @@ use Yii;
  * @property string|null $dt_end
  * @property string|null $avatar
  */
-class Generation extends BaseModel
+class Generation extends ActiveRecord
 {
     /**
      * {@inheritdoc}
@@ -55,17 +57,10 @@ class Generation extends BaseModel
             'avatar' => 'Avatar',
         ];
     }
-    public function getModel()
-    {
-        return $this->hasOne(Model::className(), ['id' => 'model_id']);
-    }
 
-    public static function getDropdownArray($id = 'id', $name = 'name')
-    {
-        $res = parent::getDropdownArray($id, $name);
-
-        return $res;
-    }
-
+   public function getModifications()
+   {
+       return $this->hasMany(Modification::class, ['generation_id' => 'id']);
+   }
 
 }

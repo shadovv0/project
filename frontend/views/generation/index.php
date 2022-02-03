@@ -63,7 +63,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'attribute' => 'avatar',
                 'format' => 'raw',
                 'value' => function($data) {
-                    return Html::img($data->avatar, ['width' => '250px']);
+                    return Html::img('/' . $data->avatar, ['width' => '250px']);
                 }
             ],
             'code',

@@ -7,6 +7,8 @@ use common\models\CountrySearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\db\ActiveRecord;
+
 
 /**
  * CountryController implements the CRUD actions for Country model.
@@ -31,18 +33,18 @@ class CountryController extends Controller
         );
     }
 
+
+
     /**
      * Lists all Country models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new CountrySearch();
-        $dataProvider = $searchModel->search($this->request->queryParams);
+        $countries = Country::find()->all();
 
         return $this->render('index', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
+            'countries' => $countries,
         ]);
     }
 
@@ -52,10 +54,14 @@ class CountryController extends Controller
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionView($id)
+    public function actionView($code)
     {
+        $country = Country::find()
+            ->where(['code' => $code])
+            ->one();
+
         return $this->render('view', [
-            'model' => $this->findModel($id),
+            'country' => $country,
         ]);
     }
 
